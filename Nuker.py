@@ -610,12 +610,18 @@ class CrimsonBot:
     def render_ascii(self, user: str = None, server_count: int = None):
         self.clear()
         ascii = "\n".join([
-            '   __  __      _   __      __            '.center(self.size),
-            '  / / / /     / | / /_  __/ /_____  _____'.center(self.size),
-            ' / / / /_____/  |/ / / / / //_/ _ \\/ ___/'.center(self.size),
-            '/ /_/ /_____/ /|  / /_/ / ,< /  __/ /    '.center(self.size),
-            '\\____/     /_/ |_/\__,_/_/|_|\\___/_/     '.center(self.size),
-            ''.center(self.size)
+            '██╗   ██╗ ██████╗ ██╗██████╗ '.center(self.size),
+            '██║   ██║██╔═══██╗██║██╔══██╗'.center(self.size),
+            '██║   ██║██║   ██║██║██║  ██║'.center(self.size),
+            '╚██╗ ██╔╝██║   ██║██║██║  ██║'.center(self.size),
+            '╚████╔╝ ╚██████╔╝██║██████╔╝'.center(self.size),
+            '  ╚═══╝   ╚═════╝ ╚═╝╚═════╝'.center(self.size),
+            '██╗      █████╗ ██╗   ██╗███████╗███╗   ██╗██████╗ ███████╗██████╗ '.center(self.size),
+            '██║     ██╔══██╗██║   ██║██╔════╝████╗  ██║██╔══██╗██╔════╝██╔══██╗'.center(self.size),
+            '██║     ███████║██║   ██║█████╗  ██╔██╗ ██║██║  ██║█████╗  ██████╔╝'.center(self.size),
+            '██║     ██╔══██║╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗'.center(self.size),
+            '███████╗██║  ██║ ╚████╔╝ ███████╗██║ ╚████║██████╔╝███████╗██║  ██║'.center(self.size),
+            '╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝'.center(self.size),
         ])
         for line in ascii.splitlines():
             print(gradient_text(line))
