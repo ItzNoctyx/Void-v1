@@ -607,6 +607,29 @@ class CrimsonBot:
     def clear(self):
         os.system('cls' if os.name == 'nt' else 'clear')
 
+        async def matrix_intro(self, duration=3):
+        import string
+        import time
+
+        chars = string.ascii_uppercase + "0123456789@#$%"
+        width = shutil.get_terminal_size().columns
+        height = shutil.get_terminal_size().lines
+
+        start = time.monotonic()
+
+        while time.monotonic() - start < duration:
+            os.system("clear")
+            for _ in range(height - 1):
+                line = "".join(
+                    random.choice(chars) if random.random() < 0.15
+                    else " "
+                    for _ in range(width)
+                )
+                print(Fore.GREEN + line)
+            await asyncio.sleep(0.12)
+
+        os.system("clear")
+        
     def render_ascii(self, user: str = None, server_count: int = None):
         self.clear()
         ascii = "\n".join([
@@ -653,6 +676,7 @@ class CrimsonBot:
         print("\n" * 2)
 
     async def run(self):
+        await self.matrix_intro()
             self.render_ascii()
             try:
                 token = (await asyncio.to_thread(input, gradient_text("Enter your bot token ~ "))).strip()
