@@ -607,8 +607,20 @@ class CrimsonBot:
     def clear(self):
         os.system('cls' if os.name == 'nt' else 'clear')
 
+
+
+
+
    async def matrix_intro(self, duration=3):
         import os
+
+
+
+
+
+
+
+       
         import random
         import shutil
         import string
@@ -622,6 +634,14 @@ class CrimsonBot:
         start = time.monotonic()
 
         while time.monotonic() - start < duration:
+
+
+
+
+
+
+
+            
             os.system("clear")
 
             for _ in range(height - 1):
