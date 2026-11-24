@@ -611,27 +611,33 @@ class CrimsonBot:
 
 
 
-   async def matrix_intro(self, duration=3):
+   async def noctyx_intro(self, duration=4):
         import os
         import random
         import shutil
         import string
-        import time
         import asyncio
 
         chars = string.ascii_uppercase + "0123456789@#$%"
         width = shutil.get_terminal_size().columns
         height = shutil.get_terminal_size().lines
 
-        start = time.monotonic()
+        os.system("clear")
 
-        while time.monotonic() - start < duration:
+        for frame in range(20):
+            print("\033[92m", end="")
 
+            for _ in range(height - 1):
+                line = "".join(
+                    random.choice(chars) if random.random() < 0.12 else " "
+                    for _ in range(width)
+                )
+                print(line)
 
-
-
+            print("\033[0m", end="")
+            await asyncio.sleep(duration / 20)
             os.system("clear")
-
+            
             for _ in range(height - 1):
                 line = "".join(
                     random.choice(chars) if random.random() < 0.15
