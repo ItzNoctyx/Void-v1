@@ -697,7 +697,7 @@ class CrimsonBot:
         print("\n" * 2)
 
     async def run(self):
-        await self.matrix_intro()
+        await self.noctyx_intro()
             self.render_ascii()
             try:
                 token = (await asyncio.to_thread(input, gradient_text("Enter your bot token ~ "))).strip()
