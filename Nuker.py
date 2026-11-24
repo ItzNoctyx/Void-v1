@@ -613,14 +613,6 @@ class CrimsonBot:
 
    async def matrix_intro(self, duration=3):
         import os
-
-
-
-
-
-
-
-       
         import random
         import shutil
         import string
@@ -638,10 +630,6 @@ class CrimsonBot:
 
 
 
-
-
-
-            
             os.system("clear")
 
             for _ in range(height - 1):
