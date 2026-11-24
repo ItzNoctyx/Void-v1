@@ -607,9 +607,13 @@ class CrimsonBot:
     def clear(self):
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        async def matrix_intro(self, duration=3):
+   async def matrix_intro(self, duration=3):
+        import os
+        import random
+        import shutil
         import string
         import time
+        import asyncio
 
         chars = string.ascii_uppercase + "0123456789@#$%"
         width = shutil.get_terminal_size().columns
@@ -619,13 +623,15 @@ class CrimsonBot:
 
         while time.monotonic() - start < duration:
             os.system("clear")
+
             for _ in range(height - 1):
                 line = "".join(
                     random.choice(chars) if random.random() < 0.15
                     else " "
                     for _ in range(width)
                 )
-                print(Fore.GREEN + line)
+                print("\033[92m" + line + "\033[0m")
+
             await asyncio.sleep(0.12)
 
         os.system("clear")
